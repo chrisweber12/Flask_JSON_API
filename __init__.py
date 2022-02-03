@@ -1,20 +1,25 @@
 from flask import Flask, jsonify, request
 import json
 
+# Flask app initialization
 app = Flask(__name__)
 app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 
+# Import JSON data from file
 with open('data.json') as file:
     data = json.load(file)
 
+# Write JSON data back to file
 def writeData():
     with open('data.json', 'w') as file:
         json.dump(data, file, indent=2)
         file.write('\n')
 
+# Get recipe names
 def recipeNames():
     return [recipe['name'] for recipe in data['recipes']]
 
+# Routes
 @app.route('/')
 def index():
     return 'Welcome to the recipe page'

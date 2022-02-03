@@ -1,4 +1,4 @@
-# Flask_JSON_API
+# Flask JSON API
 
 Simple Python-JSON API implemented with Flask
 
@@ -19,7 +19,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 
 Existing recipes can also be modified by issuing a PUT request. An example is shown similarly below:
 ```sh
-curl -X PUT -H "Content-Type: application/json" -d '{ 
+curl -X PUT -H "Content-Type: application/json" -d '{
   "name": "<existingRecipeName",
   "ingredients": [""<newIngredient1>", "<newIngredient2>", "<newIngredient3>"],
   "instructions":["<newStep1>", "<newStep2>"]   
