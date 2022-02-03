@@ -7,6 +7,11 @@ app.config['JSONIFY_PRETTYPRINT_REGULAR'] = True
 with open('data.json') as file:
     data = json.load(file)
 
+def writeData():
+    with open('data.json', 'w') as file:
+        json.dump(data, file, indent=2)
+        file.write('\n')
+
 def recipeNames():
     return [recipe['name'] for recipe in data['recipes']]
 
@@ -24,6 +29,7 @@ def add_recipe():
         return jsonify({'error':'Recipe already exists'}), 400
     else:
         data['recipes'].append(request.get_json())
+        writeData()
         return '', 201
 
 @app.route('/recipes', methods=['PUT'])
@@ -34,6 +40,7 @@ def alter_recipe():
         for i, recipe in enumerate(data['recipes']):
             if recipe['name'] == request.get_json()['name']:
                 data['recipes'][i] = request.get_json()
+        writeData()
         return '', 204
 
 @app.route('/recipes/details/<recipeName>')
