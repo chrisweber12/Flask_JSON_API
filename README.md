@@ -20,7 +20,7 @@ curl -X POST -H "Content-Type: application/json" -d '{
 Existing recipes can also be modified by issuing a PUT request. An example is shown similarly below:
 ```sh
 curl -X PUT -H "Content-Type: application/json" -d '{
-  "name": "<existingRecipeName",
+  "name": "<existingRecipeName>",
   "ingredients": [""<newIngredient1>", "<newIngredient2>", "<newIngredient3>"],
   "instructions":["<newStep1>", "<newStep2>"]   
 }' http://localhost:3000/recipes
