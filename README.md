@@ -6,7 +6,7 @@ Simple Python-JSON API implemented with Flask
 
 The *bootstrap.sh* file will do all the work in running the API - it initializes the Flask app, sources to the virtual environment, and runs the app. In the main directory, simply run the command `./bootstrap.sh`.
 
-From here, you can navigate to http://localhost:3000 and you will see a welcome page. At http://localhost:3000/recipes, you will see the names of the recipes contained in *data.json* in JSON format. Recipe details can be found at http://localhost:3000/recipes/details/{recipename}.
+From here, you can navigate to http://localhost:3000 and you will see a welcome page. At http://localhost:3000/recipes, you will see the names of the recipes contained in *data.json* in JSON format. Recipe details can be found at http://localhost:3000/recipes/details/{recipeName} (case sensitive).
 
 Recipes can be added by issuing a POST request. One way to do this is by following the format of this example shell command:
 ```sh
