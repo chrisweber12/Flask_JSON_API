@@ -21,7 +21,7 @@ Existing recipes can also be modified by issuing a PUT request. An example is sh
 ```sh
 curl -X PUT -H "Content-Type: application/json" -d '{
   "name": "<existingRecipeName>",
-  "ingredients": [""<newIngredient1>", "<newIngredient2>", "<newIngredient3>"],
+  "ingredients": ["<newIngredient1>", "<newIngredient2>", "<newIngredient3>"],
   "instructions":["<newStep1>", "<newStep2>"]   
 }' http://localhost:3000/recipes
 ```
